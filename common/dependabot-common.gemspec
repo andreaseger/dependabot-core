@@ -28,6 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "docker_registry2", "~> 1.7", ">= 1.7.1"
   spec.add_dependency "excon", "~> 0.75"
   spec.add_dependency "gitlab", "4.16.1"
+  spec.add_dependency "faraday", "~> 0.16"
+  spec.add_dependency "faraday_middleware", "~> 0.13"
   spec.add_dependency "nokogiri", "~> 1.8"
   spec.add_dependency "octokit", "~> 4.6"
   spec.add_dependency "pandoc-ruby", "~> 2.0"
