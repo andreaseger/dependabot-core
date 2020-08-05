@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "commonmarker"
 require "strscan"
 require "dependabot/pull_request_creator/message_builder"
 
@@ -31,14 +30,15 @@ module Dependabot
         end
 
         def sanitize_links_and_mentions(text:, unsafe: false)
-          doc = CommonMarker.render_doc(
-            text, :LIBERAL_HTML_TAG, COMMONMARKER_EXTENSIONS
-          )
-
-          sanitize_mentions(doc)
-          sanitize_links(doc)
-          mode = unsafe ? :UNSAFE : :DEFAULT
-          doc.to_html(([mode] + COMMONMARKER_OPTIONS), COMMONMARKER_EXTENSIONS)
+          text
+#          doc = CommonMarker.render_doc(
+#            text, :LIBERAL_HTML_TAG, COMMONMARKER_EXTENSIONS
+#          )
+#
+#          sanitize_mentions(doc)
+#          sanitize_links(doc)
+#          mode = unsafe ? :UNSAFE : :DEFAULT
+#          doc.to_html(([mode] + COMMONMARKER_OPTIONS), COMMONMARKER_EXTENSIONS)
         end
 
         private
